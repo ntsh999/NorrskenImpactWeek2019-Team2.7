@@ -1,0 +1,14 @@
+.ui-lightbox-caption{
+    &.ui-widget-header{
+        display:block!important;
+        background: transparent;
+        position: absolute;
+        top:0;
+        right:0;
+        border: none;
+        .fa-close {
+            font-size: 20px!important;
+            @include icon-override("\e92d");
+        }
+    }
+}

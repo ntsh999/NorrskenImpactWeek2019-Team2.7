@@ -1,0 +1,94 @@
+<div
+  #parentDiv
+  class="hero-section animated slower"
+  [ngClass]="{ 'reverse-nav': showImage }"
+  [style.height]="!showImage ? '100vh' : '95px'"
+  [style.background-image]="!showImage ? 'url(' + imageUrl + ')' : null"
+>
+  <div class="hero-section-text">
+    <div class="heading" [ngClass]="{ 'border-zero': !showImage }" fxLayout>
+      <div routerLink="/nsc-introduction" class="logo-container" fxFlex="20">
+        <div class="logo" fxLayout>
+          <i fxFlex="11%" class="icon icon-econ"></i>
+          <div fxFlex="89" class="product" fxFlexAlign="center">
+            Network Scale Compute
+          </div>
+        </div>
+      </div>
+      <div
+        *ngIf="!showNavbar"
+        fxFlex="80"
+        fxFlexAlign="center"
+        class="nav-container"
+      >
+        <app-navbar></app-navbar>
+      </div>
+    </div>
+    <div *ngIf="isResourcesPage" class="heading-desc">
+      <div>Built for Ericsson’s future needs</div>
+      <p> AI applications, machine learning, data mining, real-time processing, data storage and retrieval
+      </p>
+      <button class="default-medium-btn primary-cta" href="#">
+        Read our user guide
+      </button>
+    </div>
+    <div *ngIf="isWhyNSCPage" class="heading-desc">
+      <div>Built for Ericsson’s future needs</div>
+      <p> Good reasons to choose NSC  </p>
+      <button class="default-medium-btn primary-cta" href="#">
+      Hear us discuss what NSC can do
+      </button>
+    </div>
+    <div *ngIf="isProductPage" class="heading-desc">
+      <div>Extensive and scalable  compute and storage resources
+      </div>
+      <p> All you need for data-intensive applications
+      </p>
+      <!-- <button class="default-medium-btn primary-cta" href="#">
+       Sign up
+      </button> -->
+    </div>
+    <div *ngIf="isSupportPage" class="heading-desc">
+      <div>Help when you need it</div>
+      <p> 
+        Ready to assist or listen to your needs, 24x7
+      </p>
+      <button class="default-medium-btn primary-cta" href="#">
+        Read our user guide
+      </button>
+    </div>
+    <div *ngIf="isIntroductionPage" class="heading-desc">
+      <div>An operating system for data-intensive applications
+      </div>
+      <button class="default-medium-btn primary-cta" (click)="goToUrl('https://mysupport.ss.sw.ericsson.se/dwp/app/#/catalog/home')">
+        Create your account
+      </button>
+      <!-- <p-lightbox
+        type="content"
+        #lightbox
+        styleClass="video-lightbox"
+        [style]="{ top: '116px' }"
+      >
+        <a class="default-medium-btn video-btn" href="#">
+          Watch the video
+        </a>
+        <video
+          #video
+          src="../../assets/animation.mp4"
+          width="100%"
+          height="500px"
+          controls
+        ></video>
+      </p-lightbox> -->
+      <!-- <button class="default-medium-btn video-btn">Watch the video</button> -->
+    </div>
+    <div *ngIf="isComingSoon" class="heading-desc">
+      <div>Coming Soon</div>
+      <p>
+        We are looking forward to help you. Let us know what you want us to
+        write about. Write your suggestions and feedback to
+        nsc.team@ericsson.com
+      </p>
+    </div>
+  </div>
+</div>

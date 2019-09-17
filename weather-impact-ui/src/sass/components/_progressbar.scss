@@ -1,0 +1,112 @@
+@import '../helpers/variables';
+
+$progress-bar-height: 8px;
+$progress-bar-height-thin: 4px;
+
+@mixin progressBar($bgColor, $valueColor){
+  progress {
+    color: $valueColor;
+
+    &.buffer {
+      margin-bottom: -34px;
+      opacity: .3;
+    }
+  }
+
+  progress,
+  progress[role][aria-valuenow] {
+    background: $bgColor !important;
+
+    &.buffer {
+      margin-bottom: -34px;
+      opacity: .3;
+    }
+  }
+
+  progress::-webkit-progress-bar {
+    background: $bgColor;
+
+    &.buffer {
+      margin-bottom: -34px;
+      opacity: .3;
+    }
+  }
+
+  progress::-webkit-progress-value {
+    background-color: $valueColor;
+  }
+
+  progress[value]::-moz-progress-bar,
+  progress[value]::-webkit-progress-value,
+  progress[aria-valuenow]::before {
+    background: $valueColor;
+
+    &.buffer {
+      margin-bottom: -34px;
+      opacity: .3;
+    }
+  }
+}
+
+.progress-bar, .progressbar {
+  label {
+    display: block;
+
+    .icon {
+      margin-right: $space-small;
+    }
+  }
+
+  progress {
+    appearance: none;
+    border: none;
+    width: calc(#{"100%"} - 44px);
+    height: $progress-bar-height;
+    vertical-align: middle;
+    transition: all .2s ease-in-out;
+
+    &::-ms-fill {
+      border: none;
+    }
+  }
+
+  progress[role]::after {
+    background-image: none;
+  }
+
+  @include progressBar($progress-bar-background, $progress-bar-value);
+
+  progress[role],
+  progress:not([value]),
+  progress:not([value])::-moz-progress-bar,
+  progress:not([value])::-webkit-progress-bar {
+    background: none;
+    animation: indeterminateAnimation 1s infinite ease-in-out 1s;
+    transform-origin: 0 0;
+  }
+
+  progress + span {
+    margin-left: $space-small;
+  }
+
+  &.blue {
+    @include progressBar($progress-bar-background, $blue);
+  }
+
+  &.red {
+    @include progressBar($progress-bar-background, $red);
+  }
+  &.purple {
+    @include progressBar($progress-bar-background, $purple);
+  }
+
+  &.thin {
+    progress {
+      height: $progress-bar-height-thin;
+
+      &::-webkit-progress-value {
+        height: $progress-bar-height-thin;
+      }
+    }
+  }
+}

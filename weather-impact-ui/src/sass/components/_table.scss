@@ -1,0 +1,96 @@
+@import '../helpers/variables';
+
+$table-outer-gray: #767676;
+$table-striped-gray: #333;
+$table-selected: blue;
+$table-hover: #0082f0;
+
+.ui-table table {
+  width: 100%;
+  border-left: none;
+  border-right: none;
+  border-collapse: collapse;
+  text-align: left;
+  margin-bottom: $space-xl;
+
+  th {
+    border-bottom: 1px solid $table-outer-gray;
+    font-weight: $weight-medium;
+  }
+
+  td {
+    opacity: .8;
+    font-weight: $weight-light;
+    &.bold {
+      font-weight: $weight-medium;
+    }
+  }
+
+  thead {
+    font-weight: $weight-medium;
+    th {
+      padding: $space-large !important;
+    }
+  }
+
+  tbody > tr {
+    &:nth-child(even) {
+      background-color: $table-striped-gray;
+    }
+    &:last-child td {
+      border-bottom: 1px solid $table-outer-gray;
+    }
+
+    &:not(:last-child) td {
+      border-bottom: transparent;
+    }
+
+    &.selected {
+      td {
+        background-color: $table-selected;
+      }
+    }
+
+    th,
+    td {
+      padding: $space-large !important;
+    }
+  }
+
+  &:not(.dashed) {
+    tbody > tr {
+      &:hover {
+        background-color: #4e4e4e;
+      }
+    }
+  }
+}
+
+.documents-table {
+  &.ui-table {
+    font-size: 20px;
+    .ui-table-tbody > tr {
+      background-color: #fff;
+      color: $layer0;
+    }
+
+    &:not(.dashed) {
+      tbody > tr {
+        border-bottom: 1px solid #000;
+        &:hover {
+          background-color: #ccc;
+        }
+      &:last-child td {
+          border-bottom: 1px solid #000;
+        }
+      }
+      thead > tr{
+        th {
+          background: #fff;
+          color: #000;
+          border-bottom: 1px solid #000;
+        }
+      }
+    }
+  }
+}

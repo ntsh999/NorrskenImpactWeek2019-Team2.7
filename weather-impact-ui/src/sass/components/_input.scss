@@ -1,0 +1,132 @@
+@import '../helpers/variables';
+// Inputs
+$input-background: rgba(0, 0, 0, 0.149);
+$input-border: #4e4e4e;
+$input-border-hover: #767676;
+$input-border-blue: $blue;
+$input-border-red: $red;
+$input-revision-background: #172836;
+$input-placeholder: rgba(242, 242, 242, 0.6);
+$input-text-disabled: rgba(242, 242, 242, 0.6);
+$input-background-disabled: #2d2d2d;
+
+// search field
+$search-field-background: #0d0d0d;
+$search-field-color: #f2f2f2;
+$search-field-placeholder: rgba(255, 255, 255, 0.349);
+
+/////////////////////////////////////
+// Text fields - Default
+/////////////////////////////////////
+
+input, select,
+textarea {
+  color: $text;
+  display: inline-block;
+  /* width: 200px; */
+  font-size: 12px;
+  font-family: $font-main;
+  font-weight: 300;
+  background: $input-background;
+  border: 1px solid $input-border;
+  padding: 8px;
+  margin-right: $space-base;
+  -webkit-appearance: none;
+  outline: 0;
+  
+  &::placeholder {
+    color: $input-placeholder;
+  }
+
+  &:hover:not(:disabled):not([disabled]):not(:read-only):not([readonly]) {
+    border-color: $input-border-hover;
+  }
+
+  &:focus:not(:disabled):not([disabled]):not(:read-only):not([readonly]) {
+    outline: 0;
+    border-color: $blue;
+  }
+
+  &:active {
+    outline: 0;
+    border-color: $blue;
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: $input-background-disabled;
+    color: $input-text-disabled;
+  }
+
+  &:read-only,
+  &[readonly] {
+    background: transparent;
+    border-color: transparent;
+    padding-left: 0;
+
+    &:hover, &:active {
+      border-color: transparent;
+    }
+  }
+
+  &.with-icon {
+    padding-right: 25px;
+  }
+  &.medium {
+    padding:12px 10px;
+    font-size:14px;
+  }
+
+  &.validation {
+    & + .validation-error {
+      display: none;
+    }
+
+    &.ng-invalid.ng-touched {
+      border: 1px solid $input-border-red;
+      margin-bottom: $space-small;
+
+      + .validation-error {
+        display:block;
+        margin-bottom: $space-small;
+        font-size: 12px;
+        color: $red;
+      }
+    }
+  }
+
+  & + .suffix {
+    display: inline;
+    border: solid 1px $input-border;
+    border-left: none;
+    padding: 8px;
+    margin-left: -11px;
+    font-size: 12px;
+    color: $white;
+
+    &.icon-inside {
+      margin-left: -38px;
+      border: none;
+      padding: 8px;
+      color: $input-placeholder;
+    }
+  }
+}
+
+.ui-inputtext {
+  padding: 8px
+}
+
+input:-webkit-autofill {
+  background-color: $input-background !important;
+}
+
+/* &.enable-focus {
+  input:not([type="checkbox"]):not([type="radio"]), textarea {
+    &:focus {
+      outline: $focus-outline-color solid 2px;
+      outline-offset: 1px;
+    }
+  }
+} */

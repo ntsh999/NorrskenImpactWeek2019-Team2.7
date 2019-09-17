@@ -1,0 +1,128 @@
+.svc-provider-container {
+    // width: 100px;
+    // height: 100px;
+    // // border: 1px solid;
+    // margin: 100px auto;
+    // transform: rotate(45deg);
+    // position: relative;
+    .visible {
+      display: block;
+    }
+    .hide {
+      display: none
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        position: absolute;
+				padding: 0;
+				display: flex;
+				justify-content: center;
+        transform: rotate(-45deg);
+        text-align: center;
+        // border: 1px solid #ff7733;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+				visibility: hidden;
+        a {
+					display: inline-block;
+					width: 2em;
+          height: 2em;
+          background-size: 100%!important;
+          &.aws { 
+            background: url(../../../../assets/images/amazonaws.svg) no-repeat center;
+          }
+          &.google {
+            background: url(../../../../assets/images/google.svg) no-repeat center;
+          }
+          &.ibm {
+            background: url(../../../../assets/images/ibm.svg) no-repeat center;
+          }
+          &.server {
+            background: url(../../../../assets/images/server.svg) no-repeat center;
+          }
+				}
+        &:nth-child(1) {
+          top: 0;
+          left: 0;
+        }
+        &:nth-child(2) {
+          top: 0;
+          right: 0;
+        }
+        &:nth-child(3) {
+          bottom: 0;
+          left: 0;
+        }
+        &:nth-child(4) {
+          bottom: 0;
+          right: 0;
+        }
+       	&.animated { 
+          padding: 8px;
+          border-radius: 50%;
+          background: #181818;
+					visibility: visible !important; 
+				}
+        &:last-child {
+          display: block;
+          margin-left: -7px;
+          margin-top: -7px;
+          left: 50%;
+					top: 50%;
+					font-size: 14px;
+					visibility: visible;
+					
+        }
+      }
+    }
+
+    .popup-container {
+        width: 160px;
+        text-align: left;
+        font-size: 14px;
+        padding: 0;
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+        &.message {
+          pointer-events: all;
+          margin-left: -11px;
+          border: 1px transparent;
+          border-radius: 5px;
+        }
+        .space {
+         div {
+          
+           text-align: center;
+           font-weight: 100;
+           color: #f2f2f2;
+           background: #e66e19;
+           &:first-child {
+             background: #B85814;
+           }
+         }
+        }
+        .progress-bar {
+          width: 100px;
+        }
+        .controls {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 16px;
+          button {
+            width: 100%;
+            flex: 1;
+            margin-right: 8px;
+          }      
+        }
+        &:last-child {
+          &.message{
+            margin-top:20px;
+          }
+        }
+      }
+  }

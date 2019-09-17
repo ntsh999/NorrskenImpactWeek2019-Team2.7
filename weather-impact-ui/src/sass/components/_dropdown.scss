@@ -1,0 +1,122 @@
+@import "../helpers/helper";
+.ui-dropdown {
+  width: 200px;
+  &.ui-state-default {
+    background: none;
+  }
+  .ui-dropdown-label {
+    color: $text;
+    padding: 10px 12px;
+    &.ui-placeholder {
+      color: $input-placeholder;
+    }
+  }
+  .ui-dropdown-trigger {
+    border-left: none;
+    background: none;
+    .fa {
+      margin-top: 10px;
+      font-size: 18px !important;
+      margin-left: -15px;
+      @include icon-override("\e920");
+    }
+  }
+  .ui-dropdown-panel {
+    .ui-dropdown-list {
+      padding: 0;
+    }
+    .ui-dropdown-item {
+      padding: 8px 16px;
+    }
+  }
+}
+.storage-dropdown {
+  .ui-dropdown-panel {
+    .ui-dropdown-list {
+      padding: 0;
+    }
+    .ui-dropdown-item {
+      padding: 0;
+      .item-template {
+        padding: 8px 16px;
+      }
+    }
+  }
+}
+.ui-overlaypanel {
+  top: 80px !important;
+  max-height: 300px;
+  overflow-y: auto;
+  .ui-overlaypanel-content {
+    background: $layer0 !important;
+    .drop-down {
+      .drop-down__menu-box {
+        width: 100%;
+        left: 0;
+        border-radius: 4px;
+        box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+      }
+
+      .drop-down__menu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .drop-down__menu-box:before {
+        content: "";
+        background-color: transparent;
+        border-right: 8px solid transparent;
+        position: absolute;
+        border-left: 8px solid transparent;
+        border-bottom: 8px solid #0c0c0c;
+        border-top: 8px solid transparent;
+        top: 05px;
+        right: 8px;
+      }
+
+      .drop-down__menu-box:after {
+        content: "";
+        background-color: transparent;
+      }
+
+      .drop-down__item {
+        &.group-item{
+          cursor: default;
+          pointer-events: none;
+        }
+        font-size: 14px;
+        padding: 8px 0;
+        text-align: left;
+        font-weight: 500;
+        cursor: pointer;
+        position: relative;
+        &:last-of-type {
+          border-bottom: 0;
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          width: 3px;
+          height: 28px;
+          left: -13px;
+          top: 50%;
+          transform: translateY(-50%);
+          display: none;
+        }
+
+        &:hover:before,
+        &.active:before {
+          display: block;
+          background-color: #0082f0;
+        }
+      }
+    }
+  }
+}
+

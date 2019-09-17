@@ -1,0 +1,10 @@
+<div class="loader" [ngClass]="{'loader-hidden': !show, 'app-loader': appLoader, 'app-loader-collapsed': !appLoaderCollapsed, 'welcome-screen': userName }">
+  <div class="loader-overlay" [ngClass]="{'align-content': appLoader || staticPgLoader, 'welcome-overlay': userName }" fxLayout="column">
+    <div class="loading large" fxFlexAlign="center"></div>
+    <div fxFlexAlign="center" class="welcome-text" *ngIf="userName">
+      <div class="welcome">Welcome</div>
+      <div class="user-name">{{userName}}</div>
+     </div>
+    <div class="copy-right-text" fxFlexAlign="center" *ngIf="userName">Ericsson Enterprise AB. 2018. All rights reserved.</div>
+  </div>
+</div>

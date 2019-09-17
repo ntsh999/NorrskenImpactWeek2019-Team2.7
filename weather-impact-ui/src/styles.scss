@@ -1,0 +1,271 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import 'sass/style';
+  
+
+
+.mat-card,input.mat-input-element,.mat-form-field,.mat-toolbar,.ui-widget,.mat-tab-label,
+.mat-table,.mat-paginator,.mat-paginator-page-size .mat-select-trigger,.ui-widget input{
+    font-family: "Ericsson Hilda", Helvetica, Arial, sans-serif !important;
+}
+
+.clear {
+  clear: both;
+}
+
+.ui-widget input.nsc-text:active{
+  outline: 0;
+  border-color: #0082f0;
+}
+
+ 
+
+  .ui-overlaypanel-close span::before {
+    content: "\e919";
+    font-family: edsfont !important;
+  }
+  .nsc-growl.ui-growl.ui-widget {
+    font-family: "Ericsson Hilda", Helvetica, Arial, sans-serif;
+    left: 45%;
+    position: fixed;
+    top: 40px;
+    width: 27%;
+    margin-bottom:5px;
+}
+
+.nsc-growl .ui-growl-title{
+    display: none;
+}
+
+
+
+.nsc-growl .ui-growl-item-container.ui-state-highlight.ui-growl-message-success {
+    color: #fafafa;
+    background-color: #36B07F;
+    border-color: #36B07F;
+    opacity:1;
+}
+.nsc-growl .ui-growl-item-container.ui-state-highlight.ui-growl-message-error {
+color: #fafafa;
+background-color: #f52323;
+border-color: #f52323;
+opacity:1;
+}
+.nsc-growl .ui-growl-item-container {
+    padding:16px;
+}
+.nsc-growl .ui-growl-icon-close::before{
+    content: "\e92d";
+    font-family: edsfont !important;
+}
+.nsc-growl .ui-growl-item {
+    padding:0 !important;
+}
+.nsc-growl .ui-growl-image {
+
+    font-family: edsfont !important;
+    margin-right: 16px;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.nsc-growl .ui-growl-image::before{
+    content: "\e918" !important;
+}
+
+.nsc-growl .ui-growl-image::before{
+    content: "\E937" !important;
+}
+.margin-top-8 {
+  margin-top: 8px;
+}
+/* .nsc-growl .ui-growl-item-container {
+    margin:0;
+} */
+
+
+.ui-sidebar-close span::before{
+    content: "\e92d";
+    font-family: edsfont !important;
+}
+
+.nsc-table.mat-table {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    border-collapse: collapse;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+  .nsc-table.mat-table .mat-header-row {
+    border-bottom: 1px solid #767676;
+    font-weight: 700;
+  }
+  .nsc-table.mat-table .mat-cell {
+    opacity: .8;
+  }
+
+  .nsc-table.mat-table .mat-row,.nsc-table.mat-table .mat-header-row {
+    padding: 0;
+  }
+
+  .nsc-table.mat-table .mat-row:last-child {
+    border-bottom: 1px solid #767676;
+  }
+  .nsc-table.mat-table .mat-row:not(:last-child) {
+    border-bottom: 1px solid #c8c8c8;
+  }
+  .nsc-table.mat-table .mat-row.selected .mat-cell {
+    background-color: rgba(40, 160, 255, 0.1);
+  }
+  .nsc-table.mat-table .mat-header-row .mat-header-cell,
+  .nsc-table.mat-table .mat-row .mat-cell {
+    padding: 8px;
+  }
+
+  .nsc-table.mat-table .mat-header-row .mat-header-cell {
+    color: #4e4e4e;
+    font-size: 16px;
+    font-weight:bold;
+}
+  .nsc-table.mat-table:not(.dashed) tbody > .mat-row:hover .mat-cell {
+    background: rgba(40, 160, 255, 0.1);
+  }
+
+  .nsc-table.mat-table.striped .mat-row:not(:last-child) .mat-cell {
+    border-bottom-color: transparent;
+  }
+  .nsc-table.mat-table.striped .mat-row:nth-child(even) {
+    background-color: #ebebeb;
+  }
+
+  .nsc-paginator.mat-paginator{
+    font-size:14px;
+  }
+
+.alert{
+    color: #f52323;
+    font-size: 12px;
+}
+
+.mat-focused .mat-form-field-label.mat-accent {
+    color:#0082f0 !important;
+}
+
+.mat-form-field-ripple.mat-accent {
+    background-color: #0082f0 !important;
+}
+
+.ui-tooltip-text{
+    background: #333333 !important;
+    color: #f2f2f2 !important;
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+    line-height: 16px !important;
+}
+
+
+.dark-green {
+    background-color:#009F80;
+}
+
+.primary-blue {
+    background-color: #28B8DE;
+}
+
+.primary-dark-blue {
+    background-color: #042759;
+}
+
+.light-gray {
+    /* background-color: #f2f2f2; */
+    background-color: #181818;
+}
+
+.text-light-gray {
+    color: #D8D8DA;
+}
+
+.nsc-modal-title {
+    font-weight: normal;
+}
+
+perfect-scrollbar >.ps >.ps__rail-y {
+    opacity: 0.6;
+  }
+
+  .mat-tab-label.mat-tab-label-active{
+    border-bottom:3px solid #0082f0;
+    color:#4e4e4e
+}
+
+.mat-tab-label {
+    color:#fff;
+    font-size:18px;
+    color: #767676;
+}
+
+.mat-tab-group.mat-primary .mat-tab-label:focus, .mat-tab-group.mat-primary .mat-tab-link:focus, .mat-tab-nav-bar.mat-primary .mat-tab-label:focus, .mat-tab-nav-bar.mat-primary .mat-tab-link:focus{
+    background:none;
+}
+
+.mat-tab-label:focus {
+    color:#4e4e4e;
+}
+
+.fa.fa-w.fa-minus,.ui-fieldset .ui-fieldset-toggler {
+    display: none !important;/* prime ng known issue , hiding icon till the fix is available */
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    color:#0082f0;
+}
+
+select:disabled,input.nsc-input:disabled {
+  background: #e6e6e6;
+  cursor: not-allowed;
+}
+
+.component.green fieldset,.green .ui-fieldset,.green .ui-fieldset.ui-widget.ui-widget-content.ui-corner-all{
+    border:1px solid #0FC373;
+}
+
+.component.yellow fieldset,.yellow .ui-fieldset,.yellow .ui-fieldset.ui-widget.ui-widget-content.ui-corner-all{
+  border:1px solid #F2C618;
+}
+
+.component.red fieldset,.red .ui-fieldset,.red .ui-fieldset.ui-widget.ui-widget-content.ui-corner-all{
+  border:1px solid #F52323;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+  .signin-content .ui-widget-content{
+    background: transparent !important;
+    border:none !important;
+  }
+
+  .no-results {
+      text-align: center;
+      margin-top: 15px;
+  }
+
+  .ui-overlaypanel-content {
+    background: #f2f2f2;
+}
+
+.exceptionDialog{
+  width:500px;
+}
+
+.overflow.ui-sidebar.ui-widget.ui-widget-content.ui-shadow.ui-sidebar-active.ui-sidebar-right {
+  overflow-y: scroll;
+}
+
+.test .menu-container {
+  margin-top:20px;
+}

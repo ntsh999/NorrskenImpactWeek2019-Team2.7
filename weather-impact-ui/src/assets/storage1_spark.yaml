@@ -1,0 +1,106 @@
+---
+kind: Service
+spec:
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    name: spark
+    targetPort: 8080
+  selector:
+    app: master
+apiVersion: v1
+metadata:
+  name: spark
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kdfsparkmaster
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: master
+    spec:
+      containers:
+      - command:
+        - "/root/myaddition.sh"
+        name: kdfsparkmaster
+        env:
+        - name: SERVERIP
+          value: "10.137.110.29"            
+        - valueFrom:
+            configMapKeyRef:
+              name: input-config-map
+              key: ID_DEPLOYMENT
+          name: ID_DEPLOYMENT
+        - valueFrom:
+            configMapKeyRef:
+              name: input-config-map
+              key: MAPRVOLUME
+          name: MAPRVOLUME
+        image: kid2seed1:5000/kdf_service_sparkf:v1
+        ports:
+        - containerPort: 8080
+        - containerPort: 7077
+        resources:
+          requests:
+            cpu: '1'
+            memory: 1Gi
+          limits:
+            cpu: '1'
+            memory: 1Gi
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kdfsparkslave
+spec:
+  replicas: 1
+  template: 
+    metadata:
+      labels:
+        app: slave
+    spec:
+      containers:
+      - command:
+        - "/root/myaddition.sh"
+        name: kdfsparkslave
+        env:
+        - name: SERVERIP
+          value: "10.137.110.29"  
+        - valueFrom:
+            configMapKeyRef:
+              name: master-config
+              key: master_public_key
+          name: MASTER_PUBLIC_KEY
+        - valueFrom:
+            configMapKeyRef:
+              name: master-config
+              key: master_ip
+          name: MASTER_IP          
+        - valueFrom:
+            configMapKeyRef:
+              name: input-config-map
+              key: ID_DEPLOYMENT
+          name: ID_DEPLOYMENT
+        - valueFrom:
+            configMapKeyRef:
+              name: input-config-map
+              key: MAPRVOLUME
+          name: MAPRVOLUME
+        image: kid2seed1:5000/kdf_service_sparkf:v1
+        ports:
+        - containerPort: 8080
+        - containerPort: 7077
+        resources:
+          requests:
+            cpu: '1'
+            memory: 1Gi
+          limits:
+            cpu: '1'
+            memory: 1Gi

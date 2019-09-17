@@ -1,0 +1,27 @@
+<div class="wrapper">
+    <div class="notification-container"><p-growl [sticky]="true" ></p-growl></div>
+    <h2 >Weather Challenge</h2>
+<div #map class="map-container">
+    <!-- <h2>NSC Avalability Zones</h2> -->
+    <app-map-stats [globalView]="alternateRoute" [rainView]="rainFall"></app-map-stats>
+    <div #map class="map" id="map"></div>
+
+    <div class="legend-container">
+      <!---->
+      <div class="legend">
+          <div class="circle-container">
+              <div class="orange circle"></div>
+            </div>
+        <div class="legend-name">Origin</div>
+        
+      </div>
+      <div class="legend">
+          <div class="circle-container">
+              <div class="green circle"></div>
+            </div>
+        <div class="legend-name">Destination</div>
+      
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+.stats-container {
+  height: 60px;
+  margin-bottom: 8px;
+  .stats {
+    padding-left: 8px;
+    .value {
+      font-size: 32px;
+    }
+    .heading {
+      opacity: 0.6;
+    }
+    &:nth-child(1) {
+      border-left: 4px solid #0082f0;
+    }
+    &:nth-child(2) {
+      border-left: 4px solid #36b07f;
+    }
+    &:nth-child(3) {
+      border-left: 4px solid #f2c618;
+    }
+    &:nth-child(4) {
+      border-left: 4px solid #f52323;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@import '../helpers/variables';
+
+.nsc-fileupload {
+  .ui-fileupload-buttonbar {
+    padding: 0;
+    background: none;
+    border: none;
+    margin: 10px 0;
+    input:disabled {
+      cursor: not-allowed;
+    }
+  }
+  .ui-fileupload-content {
+    // border: 1px solid #4e4e4e;
+    margin: 8px 0;
+    padding: 0;
+    cursor: not-allowed;
+    width: 182px;
+    font-style: italic;
+    .ui-progressbar {
+      display: none;
+    }
+    .icon-check {
+      background: #36b07f;
+      padding: 2px;
+      border-radius: 50%;
+    }
+  }
+
+  .ui-button-icon-left::before {
+    content: '\e9b2' !important;
+    font-family: edsfont !important;
+  }
+
+  .ui-fileupload-choose.ui-button.ui-widget {
+    cursor: pointer;
+    display: inline-block;
+    min-width: 183px;
+    height: auto;
+    padding: 0.5em 1em;
+    outline: 0;
+    font-size: 12px;
+    line-height: 16px;
+    vertical-align: middle;
+    font-weight: 100;
+    font-family: 'Ericsson Hilda', 'Helvetica';
+    // color:$input-placeholder;
+    border: 1px solid #4e4e4e;
+  }
+  .ui-widget-header a {
+    margin: 4px 0;
+    display: block;
+    color: #0082f0;
+    span {
+      text-decoration: underline;
+      font-weight: normal;
+    }
+  }
+}

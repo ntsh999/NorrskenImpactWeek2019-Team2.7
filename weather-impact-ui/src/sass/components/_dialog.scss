@@ -1,0 +1,74 @@
+.ui-dialog {
+  .ui-dialog-titlebar {
+    font-weight: normal;
+    padding: 0;
+    font-size: 16px;
+    margin: 16px;
+    .ui-dialog-titlebar-icon {
+      .fa {
+        @include icon-override("\e92d");
+      }
+      &:hover {
+        background: transparent;
+        border-color: transparent;
+      }
+    }
+  }
+  .ui-dialog-content {
+    font-weight: 300;
+    font-size: 14px;
+    padding: 0;
+    margin: 24px 16px;
+    .CodeMirror {
+      &.cm-s-zenburn {
+        background-color: #3f3f3f !important;
+        color: #dcdccc !important;
+      }
+    }
+  }
+  .dialog-button-container {
+    button {
+      margin: 0 8px;
+      &.default-dialog-btn {
+        margin: 5px 8px;
+      }
+    }
+  }
+  .dialog-button-container {
+    button {
+      margin: 0 10px;
+    }
+  }
+}
+
+.notification-banner {
+  &.ui-dialog {
+    background-color: #f2f2f2 !important;
+    .ui-dialog-titlebar {
+      padding: 0;
+      margin: 0 !important;
+      .ui-dialog-titlebar-icon {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        .fa {
+          @include icon-override("\e92d");
+        }
+        &:hover {
+          background: transparent;
+          border-color: transparent;
+        }
+      }
+    }
+    .ui-dialog-content {
+      height: auto !important;
+      font-weight: 400;
+      color: #262626 !important;
+    }
+  }
+}
+.feedback-dialog {
+  &.ui-dialog {
+    width: 80%!important;
+  }
+}

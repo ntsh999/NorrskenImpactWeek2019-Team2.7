@@ -1,0 +1,75 @@
+<div #popup>
+  <div class="svc-provider-container">
+    <!-- 
+  <ul>
+   <li 
+    (click)="showPopup($event)"
+    *ngFor="let provider of marker.properties.providers;let i = index" class="tooltip"
+      [ngClass]="{'fadeIn': fadeStatus, 'fadeOut': !fadeStatus, 'animated': fadeStatus }"
+    >
+      <a class="{{provider}}"></a>
+    </li>
+  </ul> -->
+
+    <div
+      (click)="showSvcProvider($event)"
+      class="circle-ripple small"
+      [ngClass]="{
+        active: fadeStatus,
+        orange: marker.properties?.site !== 'destination',
+        green: marker.properties?.site === 'destination',
+        red: marker.properties.name === selectedLocation
+      }"
+      id="mId{{ index }}"
+      site-color="green"
+    >
+      <div
+        *ngIf="type === 'global' ||  type === 'deployment'"
+        (click)="showTable($event, 'deployment')"
+        class="animated tooltip"
+        [ngClass]="{'hide': marker.properties.name !== selectedLocation,
+        'visible': marker.properties.name !== selectedLocation  
+      }"
+      >
+        <div class="popup-container message orange visible top">
+          <div class="volume-stats">
+            <div fxLayout fxLayoutAlign="center" class="space">
+              <div fxFlex="30%" fxFlexAlign="center" class="label">
+
+                {{type === 'volume' ? volumesCount : deploymentsCount}}
+              </div>
+              <div fxFlex="70%" fxFlexAlign="center">
+                  {{type === 'volume' ? 'Volumes' : 'Deployments'}}
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div
+        *ngIf="type === 'global' ||  type === 'volume'"
+        (click)="showTable($event, 'volume')"
+        class="animated tooltip"
+        [ngClass]="{'hide': marker.properties.name !== selectedLocation,
+        'visible': marker.properties.name !== selectedLocation  
+      }"
+      >
+
+        <div class="popup-container message orange visible bottom-end">
+            <div class="volume-stats">
+              <div fxLayout fxLayoutAlign="center" class="space">
+                <div fxFlex="30%" fxFlexAlign="center" class="label">
+  
+                  {{ volumesCount}}
+                </div>
+                <div fxFlex="70%" fxFlexAlign="center">
+                    {{ 'Volumes' }}
+  
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>

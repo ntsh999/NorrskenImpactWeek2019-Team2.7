@@ -1,0 +1,55 @@
+{
+  "src_folders" : ["e2e_tests"],
+  "output_folder" : "e2e_reports",
+  "custom_commands_path" : "",
+  "custom_assertions_path" : "",
+  "page_objects_path" : ["./e2e_pages"],
+  "globals_path" : "e2e_globals/globals.js",
+
+  "selenium" : {
+    "start_process" : false,
+    "server_path" : "./bin/selenium-server-standalone-2.50.0.jar",
+    "log_path" : "",
+    "port" : 4444,
+    "cli_args" : {
+      "webdriver.chrome.driver" : "./bin/chromedriver.exe",
+      "webdriver.gecko.driver" : "",
+      "webdriver.edge.driver" : ""
+    }
+  },
+
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "http://localhost",
+      "selenium_port"  : 4444,
+      "selenium_host"  : "localhost",
+      "silent": true,
+      "screenshots" : {
+        "enabled" : false,
+        "path" : ""
+      },
+      "desiredCapabilities": {
+        "browserName": "chrome" ,
+        "webStorageEnabled" : true
+      },
+      "globals": {
+        "envIp": ""  
+      }
+    },
+
+    "firefox" : {
+      "desiredCapabilities": {
+        "browserName": "firefox",
+        "marionette": true,
+        "webStorageEnabled" : true
+      }
+    },
+
+    "edge" : {
+      "desiredCapabilities": {
+        "browserName": "MicrosoftEdge",
+        "webStorageEnabled" : true
+      }
+    }
+  }
+}

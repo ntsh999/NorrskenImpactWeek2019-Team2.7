@@ -1,0 +1,41 @@
+/* Override font-awesome Icon in prime ng components */
+@mixin icon-override($icon) {
+    font-family: edsfont !important;
+    speak: none;
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &:before {
+        content: $icon;
+    }
+}
+/* Prime NG Hover element mixin */
+@mixin hover-element() {
+    border-color: $stateHoverBorderColor;
+    background: $stateHoverBgColor;
+    color: $stateHoverTextColor;
+
+    a {
+        color: $stateHoverTextColor;
+    }
+}
+/* Badge */
+ @mixin badge($bg-color) {
+    background-color: $bg-color;
+    color: $text;
+    display: inline-block;
+    height: 16px;
+    min-width: 16px;
+    width: auto;
+    font-size: 12px;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 16px;
+    padding: 2px;
+  }

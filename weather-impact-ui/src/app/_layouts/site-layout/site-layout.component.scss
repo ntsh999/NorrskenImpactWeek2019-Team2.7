@@ -1,0 +1,13 @@
+@import '../../../sass/helpers/variables';
+
+.main-container { 
+  display: flex;
+  height: calc(100% - 65px); 
+}
+.main-content {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: $layer1;
+}

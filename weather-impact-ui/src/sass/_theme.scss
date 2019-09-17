@@ -1,0 +1,745 @@
+@import 'helpers/helper';
+.ui-widget {
+  font-family: $font-main;
+  font-size: $fontSize;
+  input,
+  select,
+  textarea,
+  button {
+    font-family: $font-main;
+    font-size: $fontSize;
+  }
+  :active {
+    outline: none;
+  }
+}
+
+.ui-widget-content {
+  /* border: $contentBorderWidth solid $contentBorderColor; */
+  border: none;
+  background: $layer2;
+  color: $contentTextColor;
+  a {
+    color: $contentTextColor;
+  }
+}
+
+.ui-widget-header {
+  border: $headerBorderWidth solid $headerBorderColor;
+  background: transparent;
+  color: $headerTextColor;
+  font-weight: $headerFontWeight;
+  &.ui-table-caption {
+    border: 0 none;
+  }
+  a {
+    color: $headerTextColor;
+  }
+}
+
+.ui-widget-overlay {
+  background: #181818;
+  opacity: .50;
+  filter: Alpha(Opacity=50);
+}
+
+p-dropdown.ng-invalid.ng-touched {
+  .ui-dropdown.ui-state-default {
+    border: $stateDefaultBorderWidth solid $stateErrorBorderColor;
+    &.ui-dropdown-trigger {
+        border:none;
+    }
+  }
+}
+
+.ui-state-default {
+  border: $stateDefaultBorderWidth solid $stateDefaultBorderColor;
+  background: $stateDefaultBgColor;
+  color: $stateDefaultTextColor;
+  a {
+    color: $stateDefaultTextColor;
+  }
+}
+
+.ui-state-active {
+  border-color: $stateActiveBorderColor;
+  background: $stateActiveBgColor;
+  color: $stateActiveTextColor;
+  a {
+    color: $stateActiveTextColor;
+  }
+}
+
+.ui-state-highlight {
+  // TO DO: Write for chips separately as most components turn blue on highlight
+  //background: $stateChipsHighlightBgColor;
+  border-color: $stateHighlightBorderColor;
+  background: $stateHighlightBgColor;
+  color: $stateHighlightTextColor;
+  a {
+    color: $stateHighlightTextColor;
+  }
+}
+
+.ui-state-focus {
+  border-color: $stateFocusBorderColor;
+  background: $stateFocusBgColor;
+  color: $stateFocusTextColor;
+  a {
+    color: $stateFocusTextColor;
+  }
+}
+
+.ui-state-error {
+  border-color: $stateErrorBorderColor;
+  background: $stateErrorBgColor;
+  color: $stateErrorTextColor;
+  a {
+    color: $stateErrorTextColor;
+  }
+}
+
+.ui-state-disabled,
+.ui-widget:disabled {
+  opacity: $disabledOpacity;
+  filter: Alpha(Opacity=$disabledOpacity * 100);
+  background-image: none;
+  cursor: default !important;
+  * {
+    cursor: default !important;
+  }
+}
+
+/* Forms */
+
+.ui-inputtext {
+  background: $inputBgColor;
+  color: $inputTextColor;
+}
+
+.ui-inputtext:enabled:hover {
+  border-color: $stateHoverBorderColor;
+}
+
+.ui-inputtext.ui-state-focus,
+.ui-inputtext:focus {
+  outline: 0 none;
+  border-color: $stateFocusBorderColor;
+  -moz-box-shadow: 0px 0px 5px $stateFocusBorderColor;
+  -webkit-box-shadow: 0px 0px 5px $stateFocusBorderColor;
+  box-shadow: 0px 0px 5px $stateFocusBorderColor;
+}
+
+.ui-inputgroup {
+  .ui-inputgroup-addon {
+    border-color: $stateDefaultBorderColor;
+    background-color: lighten($stateDefaultBorderColor, 10%);
+    color: $inputGroupTextColor;
+    &:first-child {
+      border-top-left-radius: $no-radius;
+      border-bottom-left-radius: $no-radius;
+    }
+    &:last-child {
+      border-top-right-radius: $no-radius;
+      border-bottom-right-radius: $no-radius;
+    }
+  }
+  .ui-button {
+    &:first-child {
+      border-top-left-radius: $no-radius;
+      border-bottom-left-radius: $no-radius;
+    }
+    &:last-child {
+      border-top-right-radius: $no-radius;
+      border-bottom-right-radius: $no-radius;
+    }
+  }
+}
+
+.ui-float-label input.ng-dirty.ng-invalid~label {
+  color: $stateErrorTextColor;
+}
+
+.ui-autocomplete {
+  .ui-autocomplete-multiple-container:not(.ui-state-disabled) {
+    &:hover {
+      border-color: $stateHoverBorderColor;
+    }
+    &.ui-state-focus {
+      border-color: $stateFocusBorderColor;
+    }
+  }
+}
+
+.ui-chips {
+  >ul:not(.ui-state-disabled) {
+    &:hover {
+      border-color: $stateHoverBorderColor;
+    }
+    &.ui-state-focus {
+      border-color: $stateFocusBorderColor;
+    }
+  }
+}
+
+.ui-button:focus,
+.ui-button:enabled:hover,
+.ui-fileupload-choose:not(.ui-state-disabled):hover {
+  outline: 0 none;
+  @include hover-element();
+}
+
+.ui-button:enabled:active,
+.ui-fileupload-choose:not(.ui-state-disabled):active {
+  border-color: $stateActiveBorderColor;
+  background: $stateActiveBgColor;
+  color: $stateActiveTextColor;
+}
+
+.ui-chkbox-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+  @include hover-element();
+}
+
+.ui-radiobutton-label {
+  display: inline;
+  &.ui-label-disabled {
+    cursor: not-allowed;
+  }
+}
+.ui-radiobutton-box  {
+  &.ui-state-disabled {
+    cursor: not-allowed!important;
+  }
+}
+.ui-radiobutton-box:not(.ui-state-disabled):not(.ui-state-active):hover {
+  @include hover-element();
+}
+
+.ui-dropdown .ui-dropdown-clear-icon {
+  color: lighten($inputTextColor, 40%);
+}
+
+.ui-dropdown:not(.ui-state-disabled):hover {
+  /* @include hover-element(); */
+}
+
+.ui-dropdown-panel .ui-dropdown-item:not(.ui-state-highlight):hover {
+  @include hover-element();
+}
+
+.ui-listbox {
+  .ui-listbox-header {
+    .ui-listbox-filter-container {
+      .fa {
+        color: $inputTextColor;
+      }
+    }
+  }
+  &:not(.ui-state-disabled) {
+    .ui-listbox-item:not(.ui-state-highlight):hover {
+      @include hover-element();
+    }
+  }
+  &.ui-state-disabled {
+    .ui-chkbox-box:not(.ui-state-active):hover {
+      border-color: $stateDefaultBorderColor;
+      background: $stateDefaultBgColor;
+      color: $stateDefaultTextColor;
+    }
+  }
+}
+
+.ui-multiselect:not(.ui-state-disabled):hover {
+  @include hover-element();
+}
+
+.ui-multiselect-panel .ui-multiselect-item:not(.ui-state-highlight):hover {
+  @include hover-element();
+}
+
+.ui-multiselect-panel .ui-multiselect-close {
+  color: $headerIconTextColor;
+}
+
+.ui-multiselect-panel .ui-multiselect-filter-container .fa {
+  color: $inputTextColor;
+}
+
+.ui-spinner:not(.ui-state-disabled) .ui-spinner-button:enabled:hover {
+  @include hover-element();
+}
+
+.ui-spinner:not(.ui-state-disabled) .ui-spinner-button:enabled:active {
+  border-color: $stateActiveBorderColor;
+  background: $stateActiveBgColor;
+  color: $stateActiveTextColor;
+}
+
+.ui-selectbutton .ui-button:not(.ui-state-disabled):not(.ui-state-active):hover {
+  @include hover-element();
+}
+
+.ui-togglebutton:not(.ui-state-disabled):not(.ui-state-active):hover {
+  @include hover-element();
+}
+
+.ui-paginator a:not(.ui-state-disabled):not(.ui-state-active):hover {
+  @include hover-element();
+}
+
+.ui-paginator a {
+  color: $stateDefaultTextColor;
+}
+
+.ui-datatable {
+  .ui-rowgroup-header a {
+    color: $headerTextColor;
+  }
+  .ui-sortable-column:not(.ui-state-active):hover {
+    background: $stateHoverBgColor;
+    color: $stateHoverTextColor;
+  }
+  .ui-row-toggler {
+    color: $contentTextColor;
+  }
+  tbody.ui-datatable-hoverable-rows {
+    >tr.ui-widget-content:not(.ui-state-highlight):hover {
+      cursor: pointer;
+      background: $stateHoverBgColor;
+      color: $stateHoverTextColor;
+    }
+  }
+}
+
+.ui-orderlist {
+  .ui-orderlist-item:not(.ui-state-highlight):hover {
+    @include hover-element();
+  }
+}
+
+.ui-picklist {
+  .ui-picklist-item:not(.ui-state-disabled):not(.ui-state-highlight):hover {
+    @include hover-element();
+  }
+  .ui-picklist-droppoint-highlight {
+    border-color: $stateHighlightBorderColor;
+    background: $stateHighlightBgColor;
+    color: darken($contentTextColor, 1%);
+    a {
+      color: darken($contentTextColor, 1%);
+    }
+  }
+  .ui-picklist-highlight {
+    border-color: $stateHighlightBorderColor;
+    color: darken($contentTextColor, 1%);
+    a {
+      color: darken($contentTextColor, 1%);
+    }
+  }
+}
+
+.ui-tree {
+  &.ui-treenode-dragover {
+    border-color: $stateHighlightBorderColor;
+  }
+  .ui-treenode-content {
+    &.ui-treenode-selectable {
+      .ui-treenode-label:not(.ui-state-highlight):hover {
+        @include hover-element();
+      }
+    }
+    &.ui-treenode-dragover {
+      background: $stateActiveBgColor;
+      color: $stateActiveTextColor;
+    }
+  }
+  &.ui-tree-horizontal {
+    .ui-treenode-content.ui-treenode-selectable {
+      .ui-treenode-label:not(.ui-state-highlight):hover {
+        background-color: inherit;
+        color: inherit;
+      }
+      &:not(.ui-state-highlight):hover {
+        @include hover-element();
+      }
+    }
+  }
+}
+
+.ui-treetable {
+  .ui-treetable-row.ui-treetable-row-selectable:not(.ui-state-highlight):hover {
+    background: $stateHoverBgColor;
+    color: $stateHoverTextColor;
+  }
+}
+
+.ui-organizationchart {
+  .ui-organizationchart-node-content {
+    &.ui-organizationchart-selectable-node:not(.ui-state-highlight):hover {
+      @include hover-element();
+    }
+  }
+}
+
+.ui-accordion {
+  .ui-accordion-header:not(.ui-state-active):not(.ui-state-disabled):hover {
+    @include hover-element();
+  }
+}
+
+.ui-fieldset {
+  &.ui-fieldset-toggleable {
+    .ui-fieldset-legend:hover {
+      @include hover-element();
+    }
+  }
+}
+
+.ui-panel {
+  .ui-panel-titlebar {
+    .ui-panel-titlebar-icon:hover {
+      @include hover-element();
+    }
+  }
+}
+
+.ui-tabview {
+  .ui-tabview-nav {
+    li {
+      &:not(.ui-state-active):not(.ui-state-disabled):hover {
+       opacity: 1;
+      }
+    }
+  }
+}
+
+.ui-dialog {
+  .ui-dialog-titlebar-icon {
+    color: $headerTextColor;
+    &:hover {
+      @include hover-element();
+    }
+  }
+}
+
+.ui-sidebar {
+  .ui-sidebar-close {
+    color: $headerTextColor;
+    /* &:hover {
+            @include hover-element();
+        } */
+  }
+  &.ui-sidebar-right {
+    width: 25em;
+    padding: 16px 32px;
+    overflow-y: scroll;
+  }
+}
+
+.ui-overlaypanel {
+  .ui-overlaypanel-close:hover {
+    @include hover-element();
+  }
+}
+
+.ui-inplace {
+  .ui-inplace-display:hover {
+    @include hover-element();
+  }
+}
+
+.ui-breadcrumb {
+  a {
+    color: $headerTextColor;
+  }
+}
+
+.ui-menuitem {
+  .ui-menuitem-link {
+    color: $contentTextColor;
+    &:hover {
+      @include hover-element();
+      border-color: transparent;
+    }
+  }
+  &.ui-menuitem-active {
+    >.ui-menuitem-link {
+      @include hover-element();
+      border-color: transparent;
+    }
+  }
+}
+
+.ui-tabmenu {
+  .ui-tabmenu-nav {
+    padding-top: 0;
+    li:not(.ui-state-active):hover {
+      @include hover-element();
+    }
+    .ui-tabmenuitem .ui-menuitem-text {
+      color:#fff;
+      line-height: 1;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
+
+.reverse-nav .ui-tabmenu {
+  .ui-tabmenu-nav {
+    .ui-tabmenuitem .ui-menuitem-text {
+      color:#000;
+    }
+  }
+}
+.ui-steps {
+  .ui-steps-item:not(.ui-state-highlight):not(.ui-state-disabled):hover {
+    @include hover-element();
+  }
+}
+
+.ui-panelmenu {
+  .ui-panelmenu-header {
+    &:not(.ui-state-active):hover {
+      @include hover-element();
+      border-color: $stateDefaultBorderColor;
+      a {
+        color: $stateHoverTextColor;
+      }
+    }
+    &.ui-state-active {
+      a {
+        color: $stateActiveTextColor;
+      }
+    }
+  }
+  .ui-panelmenu-content {
+    .ui-menuitem-link {
+      color: $contentTextColor;
+      &:hover {
+        @include hover-element();
+        border-color: transparent;
+      }
+    }
+  }
+}
+
+.ui-datepicker {
+  .ui-datepicker-header {
+    a {
+      color: $headerTextColor;
+      &:hover {
+        @include hover-element();
+      }
+    }
+  }
+  .ui-datepicker-calendar {
+    td:not(.ui-state-disabled) {
+      a:hover {
+        @include hover-element();
+      }
+    }
+  }
+}
+
+.fc {
+  .fc-toolbar {
+    .fc-prev-button {
+      .ui-icon-circle-triangle-w {
+        margin-top: .3em;
+        @include icon_override("\f053");
+      }
+    }
+    .fc-next-button {
+      .ui-icon-circle-triangle-e {
+        margin-top: .3em;
+        @include icon_override("\f054");
+      }
+    }
+  }
+}
+
+.ui-rating {
+  a {
+    color: $inputTextColor;
+  }
+}
+
+.ui-organizationchart {
+  .ui-organizationchart-line-down {
+    background-color: darken($contentBorderColor, 10%);
+  }
+  .ui-organizationchart-line-left {
+    border-right: 1px solid darken($contentBorderColor, 10%);
+  }
+  .ui-organizationchart-line-top {
+    border-top: 1px solid darken($contentBorderColor, 10%);
+  }
+  .ui-organizationchart-node-content {
+    border-color: darken($contentBorderColor, 10%);
+  }
+  .ui-organizationchart-node-content .ui-node-toggler {
+    color: darken($contentBorderColor, 10%);
+  }
+}
+
+/* TurboTable */
+
+.ui-table {
+  .ui-paginator-bottom {
+    border: 0 none;
+    font-weight: $weight-light;
+  }
+  .ui-table-thead>tr>th,
+  .ui-table-tfoot>tr>td {
+    background: $headerBgColor;
+    border-bottom: 1px solid $headerBorderColor;
+    color: $headerTextColor;
+  }
+  .ui-table-tbody>tr {
+    background: $contentBgColor;
+    color: $contentTextColor;
+    >td {
+      border: none;
+      background: inherit;
+    }
+    &.ui-state-highlight {
+      background-color: $contentBgColor;
+      color: $contentTextColor;
+    }
+    &.ui-contextmenu-selected {
+      background-color: lighten($stateHighlightBgColor, 20%);
+      color: $stateHighlightTextColor;
+    }
+  }
+  .ui-sortable-column {
+    .ui-sortable-column-icon {
+      color: $headerTextColor;
+    }
+    &.ui-state-highlight {
+      background-color: $stateHighlightBgColor;
+      color: $stateHighlightTextColor;
+      .ui-sortable-column-icon {
+        color: $stateHighlightTextColor;
+      }
+    }
+    &:not(.ui-state-highlight):hover {
+      background: $stateHoverBgColor;
+      color: $stateHoverTextColor;
+      .ui-sortable-column-icon {
+        color: $stateHoverTextColor;
+      }
+    }
+  }
+  &.ui-table-hoverable-rows {
+    .ui-table-tbody>tr:not(.ui-state-highlight):hover {
+      cursor: pointer;
+      background: $stateHoverBgColor;
+      color: $stateHoverTextColor;
+    }
+  }
+}
+
+@media ( max-width: 35em) {
+  .ui-table-responsive .ui-table-tbody>tr {
+    border-top: 1px solid $contentBorderColor;
+    border-bottom: 1px solid $contentBorderColor;
+  }
+}
+
+/* Row Reorder */
+
+.ui-table .ui-table-tbody>tr.ui-table-dragpoint-top>td {
+  box-shadow: inset 0 2px 0 0 $stateHighlightBgColor;
+}
+
+.ui-table .ui-table-tbody>tr.ui-table-dragpoint-bottom>td {
+  box-shadow: inset 0 -2px 0 0 $stateHighlightBgColor;
+}
+
+/* Validation */
+
+.ui-inputtext.ng-dirty.ng-invalid,
+p-dropdown.ng-dirty.ng-invalid>.ui-dropdown,
+p-autocomplete.ng-dirty.ng-invalid>.ui-autocomplete>.ui-inputtext,
+p-calendar.ng-dirty.ng-invalid>.ui-calendar>.ui-inputtext,
+p-chips.ng-dirty.ng-invalid>.ui-inputtext,
+p-inputmask.ng-dirty.ng-invalid>.ui-inputtext,
+p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box,
+p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box,
+p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch,
+p-listbox.ng-dirty.ng-invalid .ui-inputtext,
+p-multiselect.ng-dirty.ng-invalid>.ui-multiselect,
+p-spinner.ng-dirty.ng-invalid>.ui-inputtext,
+p-selectbutton.ng-dirty.ng-invalid .ui-button,
+p-togglebutton.ng-dirty.ng-invalid .ui-button {
+  border-bottom-color: $invalidInputBorderColor;
+}
+
+/* Cornering */
+
+.ui-corner-tl {
+  -moz-border-radius-topleft: $no-radius;
+  -webkit-border-top-left-radius: $no-radius;
+  border-top-left-radius: $no-radius;
+}
+
+.ui-corner-tr {
+  -moz-border-radius-topright: $no-radius;
+  -webkit-border-top-right-radius: $no-radius;
+  border-top-right-radius: $no-radius;
+}
+
+.ui-corner-bl {
+  -moz-border-radius-bottomleft: $no-radius;
+  -webkit-border-bottom-left-radius: $no-radius;
+  border-bottom-left-radius: $no-radius;
+}
+
+.ui-corner-br {
+  -moz-border-radius-bottomright: $no-radius;
+  -webkit-border-bottom-right-radius: $no-radius;
+  border-bottom-right-radius: $no-radius;
+}
+
+.ui-corner-top {
+  -moz-border-radius-topleft: $no-radius;
+  -webkit-border-top-left-radius: $no-radius;
+  border-top-left-radius: $no-radius;
+  -moz-border-radius-topright: $no-radius;
+  -webkit-border-top-right-radius: $no-radius;
+  border-top-right-radius: $no-radius;
+}
+
+.ui-corner-bottom {
+  -moz-border-radius-bottomleft: $no-radius;
+  -webkit-border-bottom-left-radius: $no-radius;
+  border-bottom-left-radius: $no-radius;
+  -moz-border-radius-bottomright: $no-radius;
+  -webkit-border-bottom-right-radius: $no-radius;
+  border-bottom-right-radius: $no-radius;
+}
+
+.ui-corner-right {
+  -moz-border-radius-topright: $no-radius;
+  -webkit-border-top-right-radius: $no-radius;
+  border-top-right-radius: $no-radius;
+  -moz-border-radius-bottomright: $no-radius;
+  -webkit-border-bottom-right-radius: $no-radius;
+  border-bottom-right-radius: $no-radius;
+}
+
+.ui-corner-left {
+  -moz-border-radius-topleft: $no-radius;
+  -webkit-border-top-left-radius: $no-radius;
+  border-top-left-radius: $no-radius;
+  -moz-border-radius-bottomleft: $no-radius;
+  -webkit-border-bottom-left-radius: $no-radius;
+  border-bottom-left-radius: $no-radius;
+}
+
+.ui-corner-all {
+  -moz-border-radius: $no-radius;
+  -webkit-border-radius: $no-radius;
+  border-radius: $no-radius;
+}

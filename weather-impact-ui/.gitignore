@@ -1,0 +1,15 @@
+.*
+*.orig
+*.log
+!.gitignore
+!.angular-cli
+!.htaccess
+!.gitkeep
+!.jshintrc
+!.jscsrc
+!.jshintignore
+bower_components
+node_modules
+reports
+e2e_reports
+sonar-runner.properties
